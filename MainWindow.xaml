@@ -19,13 +19,13 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <TabControl BorderThickness="1" Grid.Row="0" Grid.ColumnSpan="5">
-            <TabItem Header="Request">
+            <TabItem Header="Request" Width="120">
                 <local:RequestTab />
             </TabItem>
-            <TabItem Header="Schedule">
+            <TabItem Header="Schedule" Width="120">
                 <local:ScheduleTab />
             </TabItem>
-            <TabItem Header="Task">
+            <TabItem Header="Task" Width="120">
                 <local:Task />
             </TabItem>
         </TabControl>
