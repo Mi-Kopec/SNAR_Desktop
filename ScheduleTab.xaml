@@ -8,6 +8,15 @@
              d:DesignHeight="590" d:DesignWidth="500">
     <Grid>
         <TabControl x:Name ="ScheduleTabControl" BorderThickness="1" Margin="-2,-2,-2,-2">
+            
+            <TabControl.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="ScheduleDictionary.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </TabControl.Resources> 
+            
             <TabItem x:Name ="CreateNewItem" Header="Create New" Width="230" HorizontalAlignment="Left">
                 <Grid Margin="0,5,0,0">
                     <Grid.Resources >
@@ -38,7 +47,7 @@
                         <RadioButton x:Name ="FreqTypeMonthly" Click="Monthly_Click" Content="Monthly" HorizontalAlignment="Left" Width="70" Height="15" VerticalAlignment="Center"/>
                     </StackPanel>
                     <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0,-2,0,0" BorderThickness="1" BorderBrush="LightGray" HorizontalAlignment="Stretch"/>
-                    <GroupBox x:Name ="OneTimeGroup" IsEnabled="True" Header="One-time occurrence" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+                    <GroupBox x:Name ="OneTimeGroup" Header="One-time occurrence" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
                         <Grid HorizontalAlignment="left" VerticalAlignment="Center" Margin="-5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -79,7 +88,7 @@
                             <RadioButton x:Name ="FreqPM" Content="PM" Grid.Column="10" HorizontalAlignment="Left" Width="450" Height="15" VerticalAlignment="Bottom"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="DailyBasicGroup" IsEnabled="False" Header="Daily frequency" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+                    <GroupBox x:Name ="DailyBasicGroup" Header="Daily frequency" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" >
                         <Grid HorizontalAlignment="Left">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -109,7 +118,7 @@
                             -->
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="WeeklyGroup" IsEnabled="False" Header="Frequency" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">
+                    <GroupBox x:Name ="WeeklyGroup" Header="Frequency" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" >
                         <Grid HorizontalAlignment="Center">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30"/>
@@ -130,10 +139,10 @@
                             <CheckBox x:Name ="Sunday" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center">Sunday</CheckBox>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="MonthlyGroup" IsEnabled="False" Header="Monthly" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
-
+                    <GroupBox x:Name ="MonthlyGroup" Header="Monthly" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" >
+                        
                     </GroupBox>
-                    <GroupBox x:Name ="StartsGroup" IsEnabled="True" Header="Starts from" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+                    <GroupBox x:Name ="StartsGroup" Header="Starts from" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" >
                         <Grid HorizontalAlignment="left" VerticalAlignment="Center" Margin="-5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>

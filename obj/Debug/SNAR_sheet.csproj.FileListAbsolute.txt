@@ -19,3 +19,4 @@ C:\Users\micha\source\repos\SNAR_sheet\obj\Debug\SNAR_sheet.Properties.Resources
 C:\Users\micha\source\repos\SNAR_sheet\obj\Debug\SNAR_sheet.csproj.GenerateResource.cache
 C:\Users\micha\source\repos\SNAR_sheet\obj\Debug\SNAR_sheet.exe
 C:\Users\micha\source\repos\SNAR_sheet\obj\Debug\SNAR_sheet.pdb
+C:\Users\micha\source\repos\SNAR_sheet\obj\Debug\ScheduleDictionary.baml

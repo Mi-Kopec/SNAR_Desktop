@@ -13,10 +13,11 @@
             <RowDefinition Height="70"/>
             <RowDefinition Height="35"/>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
@@ -30,6 +31,8 @@
         <ComboBox x:Name ="AssignedGroupComboBox" Grid.Row="3" Margin="0,5,0,5" Grid.Column="2" BorderBrush="#FFDDDDDD" IsReadOnly="True"/>
         <Label x:Name ="ApproveLabel" Content="Approvers" Grid.Row="4" Margin="5,5,0,5" Grid.Column="0"/>
         <ComboBox x:Name ="ApproveComboBox" Grid.Row="4" Margin="0,5,0,5" Grid.Column="2" BorderBrush="#FFDDDDDD" IsReadOnly="True"/>
-        <Label x:Name ="AdminLabel" Content="Information for Administrator" Grid.Row="5" Margin="5,5,0,5" Grid.Column="0"/>
+        <Label Content="Information for" Grid.Row="5" Margin="5,5,0,0" Grid.Column="0"/>
+        <Label Content="Administrator" Grid.Row="6" Margin="5,-5,0,-5" Grid.Column="0"/>
+        <TextBox x:Name ="AdminText" Padding="3" Grid.Row="5" Margin="0,5,0,5" Grid.Column="2" Grid.RowSpan="2" TextWrapping="Wrap" SpellCheck.IsEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
     </Grid>
 </UserControl>
