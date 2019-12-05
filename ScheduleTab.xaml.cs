@@ -17,65 +17,51 @@ namespace SNAR_sheet
 {
     public partial class ScheduleTab : UserControl
     {
-        
+        public Style Enabled;
+        public Style Disabled;
+
         public ScheduleTab()
         {
             InitializeComponent();
-            /*
+            
             ResourceDictionary res = (ResourceDictionary)Application.LoadComponent(new Uri("ScheduleDictionary.xaml", UriKind.Relative));
             Style style = new Style();
-
-            OneTimeGroup.Style = (Style)res["GroupBoxEnabled"];
-            DailyBasicGroup.Style = (Style)res["GroupBoxDisabled"];
-            WeeklyGroup.Style = (Style)res["GroupBoxDisabled"];
-            MonthlyGroup.Style = (Style)res["GroupBoxDisabled"];
-            StartsGroup.Style = (Style)res["GroupBoxEnabled"];
-            */
+            Enabled = (Style)res["GroupBoxEnabled"];
+            Disabled = (Style)res["GroupBoxDisabled"];
         }
 
         private void Once_Click(object sender, RoutedEventArgs e)
         {
-            ResourceDictionary res = (ResourceDictionary)Application.LoadComponent(new Uri("ScheduleDictionary.xaml", UriKind.Relative));
-            Style style = new Style();
-
-            OneTimeGroup.Style = (Style)res["GroupBoxEnabled"];
-            DailyBasicGroup.Style = (Style)res["GroupBoxDisabled"];
-            WeeklyGroup.Style = (Style)res["GroupBoxDisabled"];
-            MonthlyGroup.Style = (Style)res["GroupBoxDisabled"];
-            StartsGroup.Style = (Style)res["GroupBoxEnabled"];
+            
+            OneTimeGroup.Style = Enabled;
+            DailyBasicGroup.Style = Disabled;
+            WeeklyGroup.Style = Disabled;
+            MonthlyGroup.Style = Disabled;
+            StartsGroup.Style = Enabled;
         }
         private void Daily_Click(object sender, RoutedEventArgs e)
         {
-            ResourceDictionary res = (ResourceDictionary)Application.LoadComponent(new Uri("ScheduleDictionary.xaml", UriKind.Relative));
-            Style style = new Style();
-
-            OneTimeGroup.Style = (Style)res["GroupBoxDisabled"];
-            DailyBasicGroup.Style = (Style)res["GroupBoxEnabled"];
-            WeeklyGroup.Style = (Style)res["GroupBoxDisabled"];
-            MonthlyGroup.Style = (Style)res["GroupBoxDisabled"];
-            StartsGroup.Style = (Style)res["GroupBoxEnabled"];
+            OneTimeGroup.Style = Disabled;
+            DailyBasicGroup.Style = Enabled;
+            WeeklyGroup.Style = Disabled;
+            MonthlyGroup.Style = Disabled;
+            StartsGroup.Style = Enabled;
         }
         private void Weekly_Click(object sender, RoutedEventArgs e)
         {
-            ResourceDictionary res = (ResourceDictionary)Application.LoadComponent(new Uri("ScheduleDictionary.xaml", UriKind.Relative));
-            Style style = new Style();
-
-            OneTimeGroup.Style = (Style)res["GroupBoxDisabled"];
-            DailyBasicGroup.Style = (Style)res["GroupBoxEnabled"];
-            WeeklyGroup.Style = (Style)res["GroupBoxEnabled"];
-            MonthlyGroup.Style = (Style)res["GroupBoxDisabled"];
-            StartsGroup.Style = (Style)res["GroupBoxEnabled"];
+            OneTimeGroup.Style = Disabled;
+            DailyBasicGroup.Style = Enabled;
+            WeeklyGroup.Style = Enabled;
+            MonthlyGroup.Style = Disabled;
+            StartsGroup.Style = Enabled;
         }
         private void Monthly_Click(object sender, RoutedEventArgs e)
         {
-            ResourceDictionary res = (ResourceDictionary)Application.LoadComponent(new Uri("ScheduleDictionary.xaml", UriKind.Relative));
-            Style style = new Style();
-
-            OneTimeGroup.Style = (Style)res["GroupBoxDisabled"];
-            DailyBasicGroup.Style = (Style)res["GroupBoxDisabled"];
-            WeeklyGroup.Style = (Style)res["GroupBoxDisabled"];
-            MonthlyGroup.Style = (Style)res["GroupBoxEnabled"];
-            StartsGroup.Style = (Style)res["GroupBoxEnabled"];
+            OneTimeGroup.Style = Disabled;
+            DailyBasicGroup.Style = Disabled;
+            WeeklyGroup.Style = Disabled;
+            MonthlyGroup.Style = Enabled;
+            StartsGroup.Style = Enabled;
         } 
     }
 }

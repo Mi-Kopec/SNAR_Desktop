@@ -47,7 +47,10 @@
                         <RadioButton x:Name ="FreqTypeMonthly" Click="Monthly_Click" Content="Monthly" HorizontalAlignment="Left" Width="70" Height="15" VerticalAlignment="Center"/>
                     </StackPanel>
                     <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0,-2,0,0" BorderThickness="1" BorderBrush="LightGray" HorizontalAlignment="Stretch"/>
-                    <GroupBox x:Name ="OneTimeGroup" Header="One-time occurrence" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+                    <GroupBox x:Name ="OneTimeGroup" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+                        <GroupBox.Header>
+                            <TextBlock Text="One-time occurrence"/>
+                        </GroupBox.Header>
                         <Grid HorizontalAlignment="left" VerticalAlignment="Center" Margin="-5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -88,7 +91,10 @@
                             <RadioButton x:Name ="FreqPM" Content="PM" Grid.Column="10" HorizontalAlignment="Left" Width="450" Height="15" VerticalAlignment="Bottom"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="DailyBasicGroup" Header="Daily frequency" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" >
+                    <GroupBox x:Name ="DailyBasicGroup" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" >
+                        <GroupBox.Header>
+                            <TextBlock Text="Daily frequency"/>
+                        </GroupBox.Header>
                         <Grid HorizontalAlignment="Left">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -118,7 +124,10 @@
                             -->
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="WeeklyGroup" Header="Frequency" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" >
+                    <GroupBox x:Name ="WeeklyGroup" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" >
+                        <GroupBox.Header>
+                            <TextBlock Text="Frequency"/>
+                        </GroupBox.Header>
                         <Grid HorizontalAlignment="Center">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30"/>
@@ -139,10 +148,15 @@
                             <CheckBox x:Name ="Sunday" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center">Sunday</CheckBox>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="MonthlyGroup" Header="Monthly" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" >
-                        
+                    <GroupBox x:Name ="MonthlyGroup" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" >
+                        <GroupBox.Header>
+                            <TextBlock Text="Monthy"/>
+                        </GroupBox.Header>
                     </GroupBox>
-                    <GroupBox x:Name ="StartsGroup" Header="Starts from" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" >
+                    <GroupBox x:Name ="StartsGroup" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" >
+                        <GroupBox.Header>
+                            <TextBlock Text="Starts from"/>
+                        </GroupBox.Header>
                         <Grid HorizontalAlignment="left" VerticalAlignment="Center" Margin="-5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
