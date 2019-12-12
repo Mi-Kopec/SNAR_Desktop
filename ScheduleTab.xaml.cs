@@ -28,11 +28,22 @@ namespace SNAR_sheet
             Style style = new Style();
             Enabled = (Style)res["GroupBoxEnabled"];
             Disabled = (Style)res["GroupBoxDisabled"];
+
+            OneTimeGroup.Style = Enabled;
+            DailyBasicGroup.Style = Disabled;
+            WeeklyGroup.Style = Disabled;
+            MonthlyGroup.Style = Disabled;
+            StartsGroup.Style = Enabled;
+
+            OElist.ItemsSource = new string[] {"Hours", "Minutes"};
+
+            MonthlyTheNum.ItemsSource = new string[] {"First", "Secound", "Third", "Last"};
+            MonthlyTheDay.ItemsSource = new string[] {"Sunday", "Monday", "Thuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
         }
 
+        #region Main
         private void Once_Click(object sender, RoutedEventArgs e)
         {
-            
             OneTimeGroup.Style = Enabled;
             DailyBasicGroup.Style = Disabled;
             WeeklyGroup.Style = Disabled;
@@ -62,6 +73,56 @@ namespace SNAR_sheet
             WeeklyGroup.Style = Disabled;
             MonthlyGroup.Style = Enabled;
             StartsGroup.Style = Enabled;
-        } 
+        }
+        #endregion
+
+        #region One-time occurrence
+
+        #endregion
+
+        #region Daily frequency 
+        private void OOA_Click(object sender, RoutedEventArgs e)
+        {
+            OccursOnceAt.IsEnabled = true;
+            OEupdown.IsEnabled = false;
+            OElist.IsEnabled = false;
+        }
+        private void OE_Click(object sender, RoutedEventArgs e)
+        {
+            OccursOnceAt.IsEnabled = false;
+            OEupdown.IsEnabled = true;
+            OElist.IsEnabled = true;
+        }
+
+        #endregion
+
+        #region Frequency
+        #endregion
+
+        #region Monthly
+        private void Day_Click(object sender, RoutedEventArgs e)
+        {
+            MonthlyDayNum.Enabled = true;
+            MonthlyDayMon.Enabled = true;
+            MonthlyLabel.IsEnabled = true;
+            MonthlyLabel2.IsEnabled = true;
+            MonthlyTheNum.IsEnabled = false;
+            MonthlyTheDay.IsEnabled = false;
+        }
+
+        private void The_Click(object sender, RoutedEventArgs e)
+        {
+            MonthlyDayNum.Enabled = false;
+            MonthlyDayMon.Enabled = false;
+            MonthlyLabel.IsEnabled = false;
+            MonthlyLabel2.IsEnabled = false;
+            MonthlyTheNum.IsEnabled = true;
+            MonthlyTheDay.IsEnabled = true;
+        }
+        #endregion
+
+        #region Starts from
+
+        #endregion
     }
 }

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SNAR_sheet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="670" Width="500">
+        Title="MainWindow" Height="650" Width="500">
     <Grid VerticalAlignment="Center">
         <Grid.RowDefinitions>
-            <RowDefinition Height="590"/>
+            <RowDefinition Height="570"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>

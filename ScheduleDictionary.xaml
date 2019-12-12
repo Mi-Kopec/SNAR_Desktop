@@ -4,20 +4,14 @@
 
             <Style x:Key="GroupBoxEnabled" TargetType="{x:Type GroupBox}">
                 <Setter Property="BorderBrush" Value="CornflowerBlue"/>
-                <Setter Property="BorderThickness" Value="3"/>
+                <Setter Property="BorderThickness" Value="2"/>
                 <Setter Property="IsEnabled" Value="True"/>
-                <Setter Property="HeaderTemplate">
-                   <Setter.Value>
-                        <DataTemplate>
-                            <TextBlock FontWeight="Bold"/>
-                        </DataTemplate>
-                    </Setter.Value>
-                   </Setter>
-                
+                <Setter Property="FontWeight" Value="Bold"/>
             </Style>
 
             <Style x:Key="GroupBoxDisabled" TargetType="{x:Type GroupBox}">
                 <Setter Property="BorderBrush" Value="LightGray"/>
+                <Setter Property="Background" Value="#ededed"/>
                 <Setter Property="BorderThickness" Value="1"/>
                 <Setter Property="IsEnabled" Value="False"/>
             </Style>

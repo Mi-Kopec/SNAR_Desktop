@@ -2,10 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
              xmlns:local="clr-namespace:SNAR_sheet"
              mc:Ignorable="d" 
-             d:DesignHeight="590" d:DesignWidth="500">
+             d:DesignHeight="550" d:DesignWidth="500">
     <Grid>
         <TabControl x:Name ="ScheduleTabControl" BorderThickness="1" Margin="-2,-2,-2,-2">
             
@@ -28,10 +29,10 @@
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="70"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
                         <RowDefinition Height="90"/>
-                        <RowDefinition Height="90"/>
-                        <RowDefinition Height="90"/>
-                        <RowDefinition Height="90"/>
+                        <RowDefinition Height="70"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150*"/>
@@ -47,10 +48,7 @@
                         <RadioButton x:Name ="FreqTypeMonthly" Click="Monthly_Click" Content="Monthly" HorizontalAlignment="Left" Width="70" Height="15" VerticalAlignment="Center"/>
                     </StackPanel>
                     <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0,-2,0,0" BorderThickness="1" BorderBrush="LightGray" HorizontalAlignment="Stretch"/>
-                    <GroupBox x:Name ="OneTimeGroup" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
-                        <GroupBox.Header>
-                            <TextBlock Text="One-time occurrence"/>
-                        </GroupBox.Header>
+                    <GroupBox x:Name ="OneTimeGroup" Header="One-time occurrence" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" >
                         <Grid HorizontalAlignment="left" VerticalAlignment="Center" Margin="-5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -60,41 +58,21 @@
                                 <!--Date     -->
                                 <ColumnDefinition Width="120"/>
                                 <!--DatePicker-->
-                                <ColumnDefinition Width="30"/>
-                                <!--____     -->
                                 <ColumnDefinition Width="50"/>
+                                <!--____     -->
+                                <ColumnDefinition Width="120"/>
                                 <!--Time     -->
-                                <ColumnDefinition Width="30"/>
-                                <!--HH       -->
-                                <ColumnDefinition Width="5"/>
-                                <!--____     -->
-                                <ColumnDefinition Width="30"/>
-                                <!--MM       -->
-                                <ColumnDefinition Width="5"/>
-                                <!--____     -->
-                                <ColumnDefinition Width="30"/>
-                                <!--SS       -->
-                                <ColumnDefinition Width="20"/>
-                                <!--AM/PM    -->
-                                <ColumnDefinition Width="50"/>
-                                <!--____     -->
                             </Grid.ColumnDefinitions>
                             <Label Content="Date" Margin="5,5,0,5" Grid.Column="0" Height="30" VerticalAlignment="Center"/>
-                            <DatePicker x:Name ="OTODatePicker" SelectedDateFormat="Short" FirstDayOfWeek="Sunday" Grid.Column="1" Height="25" VerticalAlignment="Center"/>
-                            <Label Content="Time" Margin="5,5,0,5" Grid.Column="3" Height="30" VerticalAlignment="Center"/>
-                            <TextBox x:Name ="OTOTimeH" Height="25" Padding="3" Margin="5,5,0,5" Grid.Column="4" VerticalAlignment="Center"/>
-                            <Label Content=":" Grid.Column="5" Height="30" Margin="-2,0,-7,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBox x:Name ="OTOTimeM" Height="25" Padding="3" Margin="5,5,0,5" Grid.Column="6" VerticalAlignment="Center"/>
-                            <Label Content=":" Grid.Column="7" Height="30" Margin="-2,0,-7,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBox x:Name ="OTOTimeS" Height="25" Padding="3" Margin="5,5,0,5" Grid.Column="8" VerticalAlignment="Center"/>
-                            <RadioButton x:Name ="FreqAM" Content="AM" Grid.Column="10" HorizontalAlignment="Left" Width="450" Height="15" VerticalAlignment="Top"/>
-                            <RadioButton x:Name ="FreqPM" Content="PM" Grid.Column="10" HorizontalAlignment="Left" Width="450" Height="15" VerticalAlignment="Bottom"/>
+                            <DatePicker x:Name ="OTODatePicker" SelectedDateFormat="Short" FirstDayOfWeek="Sunday" Grid.Column="1" Height="24" VerticalAlignment="Center"/>
+                            <WindowsFormsHost Grid.Column="3">
+                                <WindowsFormsHost.Child>
+                                    <wf:DateTimePicker Format="Custom" CustomFormat="hh:mm tt" ShowUpDown="True"/>
+                                </WindowsFormsHost.Child>
+                            </WindowsFormsHost>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="DailyBasicGroup" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" >
-                        <GroupBox.Header>
-                            <TextBlock Text="Daily frequency"/>
-                        </GroupBox.Header>
+                    <GroupBox x:Name ="DailyBasicGroup" Header="Daily frequency" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" >
                         <Grid HorizontalAlignment="Left">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -102,32 +80,29 @@
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="50"/>
+                                <!--HH       -->
                                 <ColumnDefinition Width="40"/>
+                                <!--Time     -->
                                 <ColumnDefinition Width="40"/>
+                                <!--Time..     -->
                                 <ColumnDefinition Width="40"/>
+                                <!--Time...    -->
                                 <ColumnDefinition Width="40"/>
+                                <!--Time...    -->
                             </Grid.ColumnDefinitions>
-                            <RadioButton x:Name="OccursOnceAt" Content="Occurs once at" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True"/>
-                            <TextBox Height="25" Width="25" Padding="3" Margin="5,5,0,5" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <Label Content=":" Grid.Column="1" Grid.Row="0" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBox Height="25" Width="25" Padding="3" Margin="5,5,0,5" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <Label Content=":" Grid.Column="2" Grid.Row="0" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBox Height="25" Width="25" Padding="3" Margin="5,5,0,5" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <RadioButton Content="AM" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Left" Width="45" Height="15" VerticalAlignment="Top"/>
-                            <RadioButton Content="PM" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Left" Width="45" Height="15" VerticalAlignment="Bottom"/>
-
-                            <RadioButton x:Name="OccursEvery" Content="Occurs every" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <!--
-                            <TextBox x:Name="txtNum" Grid.Column="1" Grid.Row="1" x:FieldModifier="private" Margin="5,5,0,5" Text="0" TextChanged="txtNum_TextChanged" />
-                            <Button x:Name="cmdUp" Grid.Column="2" Grid.Row="1" x:FieldModifier="private" Margin="5,5,0,5" Content="˄" VerticalAlignment="Top" Width="20" Click="cmdUp_Click" />
-                            <Button x:Name="cmdDown" Grid.Column="3" Grid.Row="1" x:FieldModifier="private" Margin="0,5,0,5"  Content="˅" VerticalAlignment="Bottom" Width="20" Click="cmdDown_Click" />
-                            -->
+                            <RadioButton Content="Occurs once at" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Click="OOA_Click"/>
+                            <WindowsFormsHost Grid.Column="2" Grid.ColumnSpan="3" x:Name="OccursOnceAt" Height="30">
+                                <WindowsFormsHost.Child>
+                                    <wf:DateTimePicker Format="Custom" CustomFormat="hh:mm tt" ShowUpDown="True" Height="28"/>
+                                </WindowsFormsHost.Child>
+                            </WindowsFormsHost>
+                            <RadioButton Content="Occurs every" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Click="OE_Click"/>
+                            <ComboBox x:Name="OEupdown" Height="24" Grid.Column="2" Grid.Row="1" IsEnabled="False" SelectedIndex="0"/>
+                            <ComboBox x:Name="OElist" Height="24" Margin="20,0,10,0" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" IsEnabled="False" SelectedIndex="0"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="WeeklyGroup" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" >
-                        <GroupBox.Header>
-                            <TextBlock Text="Frequency"/>
-                        </GroupBox.Header>
+                    <GroupBox x:Name ="WeeklyGroup" Header="Frequency" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" >
                         <Grid HorizontalAlignment="Center">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30"/>
@@ -148,15 +123,42 @@
                             <CheckBox x:Name ="Sunday" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center">Sunday</CheckBox>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="MonthlyGroup" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" >
-                        <GroupBox.Header>
-                            <TextBlock Text="Monthy"/>
-                        </GroupBox.Header>
+                    <GroupBox x:Name ="MonthlyGroup" Header="Monthy" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" >
+                        <Grid HorizontalAlignment="left" VerticalAlignment="Center" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="50"/>
+                                <!--HH       -->
+                                <ColumnDefinition Width="60"/>
+                                <!--Time     -->
+                                <ColumnDefinition Width="50"/>
+                                <!--Time..     -->
+                                <ColumnDefinition Width="60"/>
+                                <!--Time...    -->
+                            </Grid.ColumnDefinitions>
+                            <RadioButton Content="Day" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="True" Click="Day_Click"/>
+                            <WindowsFormsHost Grid.Column="1" Grid.Row="0" Height="30">
+                                <WindowsFormsHost.Child>
+                                    <wf:NumericUpDown x:Name="MonthlyDayNum"  Enabled="False" Height="28"/>
+                                </WindowsFormsHost.Child>
+                            </WindowsFormsHost>
+                            <Label x:Name="MonthlyLabel" Content="of every" Grid.Column="2" Grid.Row="0" Height="30" HorizontalAlignment="Center"/>
+                            <WindowsFormsHost Grid.Column="3" Grid.Row="0" Height="30">
+                                <WindowsFormsHost.Child>
+                                    <wf:NumericUpDown x:Name="MonthlyDayMon" Enabled="False" Height="28"/>
+                                </WindowsFormsHost.Child>
+                            </WindowsFormsHost>
+                            <Label x:Name="MonthlyLabel2" Content="month(s)" Grid.Column="4" Grid.Row="0" Height="30" HorizontalAlignment="Center"/>
+                            <RadioButton Content="The" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Click="The_Click"/>
+                            <ComboBox x:Name="MonthlyTheNum" Height="24" Margin="0,0,30,0" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" IsEnabled="False" SelectedIndex="0"/>
+                            <ComboBox x:Name="MonthlyTheDay" Height="24" Margin="0,0,10,0" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" IsEnabled="False" SelectedIndex="0"/>
+                        </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="StartsGroup" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" >
-                        <GroupBox.Header>
-                            <TextBlock Text="Starts from"/>
-                        </GroupBox.Header>
+                    <GroupBox x:Name ="StartsGroup" Header="Starts from" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" >
                         <Grid HorizontalAlignment="left" VerticalAlignment="Center" Margin="-5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -170,31 +172,17 @@
                                 <!--____     -->
                                 <ColumnDefinition Width="50"/>
                                 <!--Time     -->
-                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="120"/>
                                 <!--HH       -->
-                                <ColumnDefinition Width="5"/>
-                                <!--____     -->
-                                <ColumnDefinition Width="30"/>
-                                <!--MM       -->
-                                <ColumnDefinition Width="5"/>
-                                <!--____     -->
-                                <ColumnDefinition Width="30"/>
-                                <!--SS       -->
-                                <ColumnDefinition Width="20"/>
-                                <!--AM/PM    -->
-                                <ColumnDefinition Width="50"/>
-                                <!--____     -->
                             </Grid.ColumnDefinitions>
                             <Label Content="Date" Margin="5,5,0,5" Grid.Column="0" Height="30" VerticalAlignment="Center"/>
-                            <DatePicker x:Name ="OTODatePicker2" SelectedDateFormat="Short" FirstDayOfWeek="Sunday" Grid.Column="1" Height="25" VerticalAlignment="Center"/>
+                            <DatePicker x:Name ="OTODatePicker3" SelectedDateFormat="Short" FirstDayOfWeek="Sunday" Grid.Column="1" Height="24" VerticalAlignment="Center"/>
                             <Label Content="Time" Margin="5,5,0,5" Grid.Column="3" Height="30" VerticalAlignment="Center"/>
-                            <TextBox x:Name ="OTOTimeH2" Height="25" Padding="3" Margin="5,5,0,5" Grid.Column="4" VerticalAlignment="Center"/>
-                            <Label Content=":" Grid.Column="5" Height="30" Margin="-2,0,-7,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBox x:Name ="OTOTimeM2" Height="25" Padding="3" Margin="5,5,0,5" Grid.Column="6" VerticalAlignment="Center"/>
-                            <Label Content=":" Grid.Column="7" Height="30" Margin="-2,0,-7,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                            <TextBox x:Name ="OTOTimeS2" Height="25" Padding="3" Margin="5,5,0,5" Grid.Column="8" VerticalAlignment="Center"/>
-                            <RadioButton x:Name ="FreqAM2" Content="AM" Grid.Column="10" HorizontalAlignment="Left" Width="450" Height="15" VerticalAlignment="Top"/>
-                            <RadioButton x:Name ="FreqPM2" Content="PM" Grid.Column="10" HorizontalAlignment="Left" Width="450" Height="15" VerticalAlignment="Bottom"/>
+                            <WindowsFormsHost Grid.Column="4">
+                                <WindowsFormsHost.Child>
+                                    <wf:DateTimePicker Format="Custom" CustomFormat="hh:mm tt" ShowUpDown="True"/>
+                                </WindowsFormsHost.Child>
+                            </WindowsFormsHost>
                         </Grid>
                     </GroupBox>
                 </Grid>
