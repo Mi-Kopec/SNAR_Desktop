@@ -17,22 +17,26 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="135"/>
+            <ColumnDefinition Width="35"/>
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <Label x:Name ="ReqNameLabel" Content="Request Name" Grid.Row="0" Margin="5,5,0,5" Grid.Column="0"/>
-        <TextBox x:Name ="ReqNameText" Padding="3" Grid.Row="0" Margin="0,5,0,5" Grid.Column="2" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+        <Label Name="ReqNameLabelLength" FontSize="10" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6"/>
+        <TextBox x:Name ="ReqNameText" Padding="3" Grid.Row="0" Margin="0,5,0,5" Grid.Column="2" TextWrapping="Wrap" SpellCheck.IsEnabled="True" MaxLength="50" TextChanged="ReqNameText_Changed"/>
         <Label x:Name ="ReqDescLabel" Content="Description" Grid.Row="1" Margin="5,5,0,5" Grid.Column="0"/>
-        <TextBox x:Name ="ReqDescText" Padding="3" Grid.Row="1" Margin="0,5,0,5" Grid.Column="2" TextWrapping="Wrap"  SpellCheck.IsEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
+        <Label Name="ReqDescLabelLength" FontSize="10" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6"/>
+        <TextBox x:Name ="ReqDescText" Padding="3" Grid.Row="1" Margin="0,5,0,5" Grid.Column="2" TextWrapping="Wrap"  SpellCheck.IsEnabled="True" MaxLength="250" TextChanged="ReqDescText_Changed" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
         <Label x:Name ="CommentLabel" Content="Additional comments" Grid.Row="2" Margin="5,5,0,5" Grid.Column="0"/>
-        <TextBox x:Name ="CommentText" Padding="3" Grid.Row="2" Margin="0,5,0,5" Grid.Column="2" TextWrapping="Wrap" SpellCheck.IsEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
+        <Label Name="CommentLabelLength" FontSize="10" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6"/>
+        <TextBox x:Name ="CommentText" Padding="3" Grid.Row="2" Margin="0,5,0,5" Grid.Column="2" TextWrapping="Wrap" TextChanged="CommentText_Changed" SpellCheck.IsEnabled="True" MaxLength="150" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
         <Label x:Name ="AssignedGroupLabel" Content="AssignedGroup" Grid.Row="3" Margin="5,5,0,5" Grid.Column="0"/>
         <ComboBox x:Name ="AssignedGroupComboBox" Grid.Row="3" Margin="0,5,0,5" Grid.Column="2" BorderBrush="#FFDDDDDD" IsReadOnly="True"/>
         <Label x:Name ="ApproveLabel" Content="Approvers" Grid.Row="4" Margin="5,5,0,5" Grid.Column="0"/>
         <ComboBox x:Name ="ApproveComboBox" Grid.Row="4" Margin="0,5,0,5" Grid.Column="2" BorderBrush="#FFDDDDDD" IsReadOnly="True"/>
         <Label Content="Information for" Grid.Row="5" Margin="5,5,0,0" Grid.Column="0"/>
         <Label Content="Administrator" Grid.Row="6" Margin="5,-5,0,-5" Grid.Column="0"/>
-        <TextBox x:Name ="AdminText" Padding="3" Grid.Row="5" Margin="0,5,0,5" Grid.Column="2" Grid.RowSpan="2" TextWrapping="Wrap" SpellCheck.IsEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
+        <Label Name="IfALength" FontSize="10" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6"/>
+        <TextBox x:Name ="AdminText" Padding="3" Grid.Row="5" Margin="0,5,0,5" Grid.Column="2" Grid.RowSpan="2" TextWrapping="Wrap" MaxLength="150" TextChanged="AdminText_Changed" SpellCheck.IsEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
     </Grid>
 </UserControl>

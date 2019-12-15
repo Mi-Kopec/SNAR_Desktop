@@ -39,7 +39,8 @@
                         <ColumnDefinition Width="300*"/>
                     </Grid.ColumnDefinitions>
                     <Label x:Name ="SchName" Content="Name" Grid.Row="0" Margin="5,5,0,5" Grid.Column="0"/>
-                    <TextBox x:Name ="SchNameText" Padding="5" Grid.Row="0" Margin="0,5,10,5" Grid.Column="1" SpellCheck.IsEnabled="True"/>
+                    <Label Name="SchNameTextLength" Grid.Row="0" Grid.Column="1" HorizontalAlignment="left" VerticalAlignment="Top" Margin="-25,6,0,0" FontSize="10" />
+                    <TextBox x:Name ="SchNameText" MaxLength="30" Padding="5" Grid.Row="0" Margin="10,5,10,5" Grid.Column="1" SpellCheck.IsEnabled="True" TextChanged="SchNameText_Changed"/>
                     <Label x:Name ="SchGroupBoxLabel" Content="Schedule type" Grid.Row="1" Margin="5,5,0,5" Grid.Column="0"/>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10,5,10,5" Grid.Column="1">
                         <RadioButton x:Name ="FreqTypeOnce" Click="Once_Click" Content="Once" HorizontalAlignment="Left" IsChecked="True" Width="70" Height="15" VerticalAlignment="Center"/>

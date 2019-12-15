@@ -25,7 +25,7 @@ namespace SNAR_sheet
             InitializeComponent();
             
             ResourceDictionary res = (ResourceDictionary)Application.LoadComponent(new Uri("ScheduleDictionary.xaml", UriKind.Relative));
-            Style style = new Style();
+            Style = new Style();
             Enabled = (Style)res["GroupBoxEnabled"];
             Disabled = (Style)res["GroupBoxDisabled"];
 
@@ -42,6 +42,10 @@ namespace SNAR_sheet
         }
 
         #region Main
+        private void SchNameText_Changed(object sender, TextChangedEventArgs e)
+        {
+            Counter SchNameText_Counter = new Counter(SchNameText, SchNameTextLength);
+        }
         private void Once_Click(object sender, RoutedEventArgs e)
         {
             OneTimeGroup.Style = Enabled;
@@ -93,7 +97,17 @@ namespace SNAR_sheet
             OEupdown.IsEnabled = true;
             OElist.IsEnabled = true;
         }
-
+        public void BindingOEupdown(object sender, RoutedEventArgs e)
+        {
+            if(OElist.SelectedIndex == 0)
+            {
+                OEupdown.ItemsSource = new string[] { "raz", "dwa", "trzy" };
+            }
+            else
+            {
+                OEupdown.ItemsSource = new string[] { "m1", "m2", "m3" };
+            }
+        }
         #endregion
 
         #region Frequency
@@ -124,5 +138,7 @@ namespace SNAR_sheet
         #region Starts from
 
         #endregion
+
+        
     }
 }

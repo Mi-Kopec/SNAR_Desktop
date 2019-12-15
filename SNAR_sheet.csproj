@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LabelCounter.cs" />
     <Compile Include="RequestTab.xaml.cs">
       <DependentUpon>RequestTab.xaml</DependentUpon>
     </Compile>

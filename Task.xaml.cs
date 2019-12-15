@@ -15,14 +15,18 @@ using System.Windows.Shapes;
 
 namespace SNAR_sheet
 {
-    /// <summary>
-    /// Logika interakcji dla klasy Task.xaml
-    /// </summary>
+
     public partial class Task : UserControl
     {
         public Task()
         {
             InitializeComponent();
         }
+        
+        private void TxtInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Counter ScheduleMainCounter = new Counter(txtInput, lblLength);
+        }
+
     }
 }
