@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             xmlns:viewmodel="clr-namespace:SNAR_sheet.Schedule_ViewModel"
              xmlns:local="clr-namespace:SNAR_sheet"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="500">
+    <UserControl.Resources>
+        <viewmodel:Schedule_ViewModel x:Key="Schedule_VM"/>
+    </UserControl.Resources>
     <Grid>
         <TabControl x:Name ="ScheduleTabControl" BorderThickness="1" Margin="-2,-2,-2,-2">
             
@@ -39,7 +43,7 @@
                         <ColumnDefinition Width="300*"/>
                     </Grid.ColumnDefinitions>
                     <Label x:Name ="SchName" Content="Name" Grid.Row="0" Margin="5,5,0,5" Grid.Column="0"/>
-                    <Label Name="SchNameTextLength" Grid.Row="0" Grid.Column="1" HorizontalAlignment="left" VerticalAlignment="Top" Margin="-25,6,0,0" FontSize="10" />
+                    <Label Name="SchNameTextLength" Grid.Row="0" Grid.Column="1" HorizontalAlignment="left" VerticalAlignment="Top" Margin="-15,-3,0,0" FontSize="10" />
                     <TextBox x:Name ="SchNameText" MaxLength="30" Padding="5" Grid.Row="0" Margin="10,5,10,5" Grid.Column="1" SpellCheck.IsEnabled="True" TextChanged="SchNameText_Changed"/>
                     <Label x:Name ="SchGroupBoxLabel" Content="Schedule type" Grid.Row="1" Margin="5,5,0,5" Grid.Column="0"/>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10,5,10,5" Grid.Column="1">
@@ -73,7 +77,7 @@
                             </WindowsFormsHost>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="DailyBasicGroup" Header="Daily frequency" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" >
+                    <GroupBox x:Name ="DailyBasicGroup" Header="Daily frequency" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"   DataContext="{Binding Source={StaticResource Schedule_VM}}">
                         <Grid HorizontalAlignment="Left">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
@@ -99,11 +103,11 @@
                                 </WindowsFormsHost.Child>
                             </WindowsFormsHost>
                             <RadioButton Content="Occurs every" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Click="OE_Click"/>
-                            <ComboBox x:Name="OEupdown" Height="24" Grid.Column="2" Grid.Row="1" IsEnabled="False" SelectedIndex="0"/>
-                            <ComboBox x:Name="OElist" Height="24" Margin="20,0,10,0" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" IsEnabled="False" SelectedIndex="0"/>
+                            <ComboBox x:Name="OEnumbers" Height="24" Grid.Column="2" Grid.Row="1" IsEnabled="False" SelectedIndex="0"  ItemsSource="{Binding Numbers}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedNumber}" />
+                            <ComboBox x:Name="OEunit" Height="24" Margin="20,0,10,0" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" IsEnabled="False" SelectedIndex="0" ItemsSource="{Binding Units}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedUnit}"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="WeeklyGroup" Header="Frequency" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" >
+                    <GroupBox x:Name ="WeeklyGroup" Header="Frequency" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2">
                         <Grid HorizontalAlignment="Center">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30"/>

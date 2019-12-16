@@ -29,19 +29,21 @@ namespace SNAR_sheet
             Enabled = (Style)res["GroupBoxEnabled"];
             Disabled = (Style)res["GroupBoxDisabled"];
 
+            CounterDefault counterDefault = new CounterDefault { Number = SchNameText.MaxLength.ToString()};
+            SchNameTextLength.Content = counterDefault;
+
             OneTimeGroup.Style = Enabled;
             DailyBasicGroup.Style = Disabled;
             WeeklyGroup.Style = Disabled;
             MonthlyGroup.Style = Disabled;
             StartsGroup.Style = Enabled;
 
-            OElist.ItemsSource = new string[] {"Hours", "Minutes"};
-
             MonthlyTheNum.ItemsSource = new string[] {"First", "Secound", "Third", "Last"};
             MonthlyTheDay.ItemsSource = new string[] {"Sunday", "Monday", "Thuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
         }
 
         #region Main
+        
         private void SchNameText_Changed(object sender, TextChangedEventArgs e)
         {
             Counter SchNameText_Counter = new Counter(SchNameText, SchNameTextLength);
@@ -88,25 +90,14 @@ namespace SNAR_sheet
         private void OOA_Click(object sender, RoutedEventArgs e)
         {
             OccursOnceAt.IsEnabled = true;
-            OEupdown.IsEnabled = false;
-            OElist.IsEnabled = false;
+            OEnumbers.IsEnabled = false;
+            OEunit.IsEnabled = false;
         }
         private void OE_Click(object sender, RoutedEventArgs e)
         {
             OccursOnceAt.IsEnabled = false;
-            OEupdown.IsEnabled = true;
-            OElist.IsEnabled = true;
-        }
-        public void BindingOEupdown(object sender, RoutedEventArgs e)
-        {
-            if(OElist.SelectedIndex == 0)
-            {
-                OEupdown.ItemsSource = new string[] { "raz", "dwa", "trzy" };
-            }
-            else
-            {
-                OEupdown.ItemsSource = new string[] { "m1", "m2", "m3" };
-            }
+            OEnumbers.IsEnabled = true;
+            OEunit.IsEnabled = true;
         }
         #endregion
 
@@ -138,7 +129,5 @@ namespace SNAR_sheet
         #region Starts from
 
         #endregion
-
-        
     }
 }

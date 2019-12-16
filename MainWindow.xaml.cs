@@ -21,6 +21,7 @@ namespace SNAR_sheet
         {
             InitializeComponent();
         }
+
         public void UserLabel_Load(object sender, RoutedEventArgs e)
         {
             var LogUserName = sender as Label;

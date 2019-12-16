@@ -23,10 +23,5 @@ namespace SNAR_sheet
             InitializeComponent();
         }
         
-        private void TxtInput_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Counter ScheduleMainCounter = new Counter(txtInput, lblLength);
-        }
-
     }
 }

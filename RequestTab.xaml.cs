@@ -15,14 +15,21 @@ using System.Windows.Shapes;
 
 namespace SNAR_sheet
 {
-    /// <summary>
-    /// Logika interakcji dla klasy RequestTab.xaml
-    /// </summary>
+
     public partial class RequestTab : UserControl
     {
         public RequestTab()
         {
             InitializeComponent();
+
+            CounterDefault ReqNameText_CounterDefault = new CounterDefault { Number = ReqNameText.MaxLength.ToString() };
+            ReqNameLabelLength.Content = ReqNameText_CounterDefault;
+            CounterDefault ReqDescText_CounterDefault = new CounterDefault { Number = ReqDescText.MaxLength.ToString() };
+            ReqDescLabelLength.Content = ReqDescText_CounterDefault;
+            CounterDefault CommentText_CounterDefault = new CounterDefault { Number = CommentText.MaxLength.ToString() };
+            CommentLabelLength.Content = CommentText_CounterDefault;
+            CounterDefault AdminText_CounterDefault = new CounterDefault { Number = AdminText.MaxLength.ToString() };
+            IfALength.Content = AdminText_CounterDefault;
         }
 
         #region Counters

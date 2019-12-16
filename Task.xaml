@@ -6,11 +6,5 @@
              xmlns:local="clr-namespace:SNAR_sheet"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="500">
-    <Grid>
-        <TextBox HorizontalAlignment="Left" x:Name="txtInput" MaxLength="50" Height="23" Margin="220,67,0,0" TextWrapping="Wrap" Text="" TextChanged="TxtInput_TextChanged" VerticalAlignment="Top" Width="120"/>
-        <Label Name="lblLength"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,126,0,0"/>
-        <Label Content="Your text length" HorizontalAlignment="Left" Margin="93,126,0,0" VerticalAlignment="Top"/>
-        <Label Content="Your text" HorizontalAlignment="Left" Margin="93,67,0,0" VerticalAlignment="Top"/>
-
-    </Grid>
+    <Grid></Grid>
 </UserControl>

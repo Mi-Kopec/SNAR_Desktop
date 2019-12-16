@@ -57,7 +57,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="LabelCounter.cs" />
+    <Compile Include="Classes\Counter.cs" />
+    <Compile Include="Classes\CounterDefault.cs" />
     <Compile Include="RequestTab.xaml.cs">
       <DependentUpon>RequestTab.xaml</DependentUpon>
     </Compile>
@@ -67,6 +68,8 @@
     <Compile Include="Task.xaml.cs">
       <DependentUpon>Task.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Schedule_ViewModel.cs" />
+    <Compile Include="Model\Schedule_Model.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -122,8 +125,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Themes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
