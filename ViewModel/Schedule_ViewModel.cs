@@ -13,31 +13,26 @@ namespace SNAR_sheet.Schedule_ViewModel
     {
         public Schedule_ViewModel()
         {
+            // populate Hours list
+            var HoursList = new List<Number>();
+            for (int i = 1; i <= 24; i++)
+            {
+                HoursList.Add(new Number() { Name = i });
+            }
+
+            // populate Minutes list
+            var MinutesList = new List<Number>();
+            for (int i = 1; i <= 60; i++)
+            {
+                MinutesList.Add(new Number() { Name = i });
+            }
+
             this.Units = new List<Unit>()
-      {
-        new Unit(){ Name = "Minutes",
-        Numbers = new List<Number>()
-        {
-          new Number(){ Name = 1 },
-          new Number(){ Name = 2 },
-          new Number(){ Name = 3 }
-        }},
-        new Unit(){ Name = "Minutes",
-        Numbers = new List<Number>()
-        {
-            new Number(){ Name = 1234 },
-        }},
-        new Unit(){ Name = "Secounds",
-        Numbers = new List<Number>()
-        {
-          new Number(){ Name = 1 },
-          new Number(){ Name = 2 },
-          new Number(){ Name = 3 },
-          new Number(){ Name = 4 },
-          new Number(){ Name = 5 },
-          new Number(){ Name = 6 },
-        }}
-      };
+            {
+                new Unit(){ Name = "Hours", Numbers = HoursList},
+                new Unit(){ Name = "Minutes", Numbers = MinutesList}
+
+            };
 
             //set default Unit selection:
             this.SelectedUnit = this.Units[0];

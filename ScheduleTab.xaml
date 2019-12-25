@@ -87,7 +87,7 @@
                                 <ColumnDefinition Width="120"/>
                                 <ColumnDefinition Width="50"/>
                                 <!--HH       -->
-                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="50"/>
                                 <!--Time     -->
                                 <ColumnDefinition Width="40"/>
                                 <!--Time..     -->
