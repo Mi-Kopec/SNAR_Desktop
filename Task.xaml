@@ -6,5 +6,7 @@
              xmlns:local="clr-namespace:SNAR_sheet"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="500">
-    <Grid></Grid>
+    <Grid>
+        
+    </Grid>
 </UserControl>

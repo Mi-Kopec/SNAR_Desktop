@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNAR_sheet", "SNAR_sheet.csproj", "{D6336CC1-4EAB-47DE-944B-F3D3B09E7E88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNAR_desktop", "SNAR_desktop.csproj", "{D6336CC1-4EAB-47DE-944B-F3D3B09E7E88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -77,7 +77,7 @@
                             </WindowsFormsHost>
                         </Grid>
                     </GroupBox>
-                    <GroupBox x:Name ="DailyBasicGroup" Header="Daily frequency" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"   DataContext="{Binding Source={StaticResource Schedule_VM}}">
+                    <GroupBox x:Name ="DailyBasicGroup" Header="Daily frequency" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" DataContext="{Binding Source={StaticResource Schedule_VM}}">
                         <Grid HorizontalAlignment="Left">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35"/>
